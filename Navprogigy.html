@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prodigy Task 1</title>
+  <style>
+    body, ul {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+      box-shadow: none;
+    }
+
+    nav.scrolled {
+      background-color: #333;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 15px;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffcc00;
+      border-bottom: 2px solid #ffcc00;
+    }
+
+    .content {
+      margin-top: 100px;
+      padding: 40px;
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <h1>Scroll Down to See the Effect</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+    <p style="margin-top: 1000px;">Scroll ended here.</p>
+  </div>
+
+  <script>
+    window.addEventListener("scroll", function() {
+      const navbar = document.getElementById("navbar");
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>
